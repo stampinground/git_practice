@@ -1,9 +1,4 @@
-startfrequency = 0
-
-lineresult = []
-
-listinput = (
-+14
+day1input = '''+14
 -15
 +7
 -10
@@ -960,14 +955,51 @@ listinput = (
 -17
 -23
 -21
--71664)
-
-sumcheck = (startfrequency + listinput)
-
-print(sumcheck)
+-71664
+'''
 
 
-for n in sumcheck:
-    lineresult.append(sumcheck)
+'''
+Part 2 task
+- Find the same number the displays twice during loop
+- Display that number
+'''
 
-print(lineresult)
+input_list = day1input.splitlines() #change the input to a list, giving new values for each line
+
+derived_list = []
+derived_total = 0
+for i in input_list:
+    derived_list.append(derived_total + int(i)) #create a new list that saves the total after each calculation
+    derived_total = derived_total + int(i) #keeps the cumulative total of each sum in the list
+#print(derived_list)
+
+
+
+from collections import Counter
+duplicate_count = Counter(derived_list) #create a new list which places a counter with each value
+frequency = [i for i, v in duplicate_count.items() if v > 1]
+#print(duplicate_count)
+print(frequency)
+
+#enumerating the list
+#enumerate_derived_list = enumerate(derived_list, 1)
+#print(list(enumerate_derived_list))
+
+
+'''
+for count, i in enumerate(derived_list[1:]):
+    if i == i:
+        print(count, i)
+'''
+'''
+
+test_list = [1,2,3,4,3]
+
+from collections import Counter
+duplicate_count = Counter(test_list)
+frequency = [i for i, v in duplicate_count.items() if v > 1]
+print(frequency)
+
+
+        '''
