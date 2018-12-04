@@ -253,9 +253,10 @@ vinihorkulbfedcyzmsqgdxpau
 
 from collections import Counter
 
-#separating data into a list called x
+#separating data into a list called input_list
 input_list = day2input.splitlines()
 
+#creating a list of each character in the alphabet to cycle through later
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
 #I now want to count the amount of letters in each item
@@ -270,12 +271,9 @@ def volumechecker(letter):
             two_count += 1
         elif each_line.count(letter) == 3:
             three_count += 1
-        elif each_line.count(letter) == 4:
-            four_count += 1
     print(two_count)
     print(three_count)
-    print(four_count)
-    return two_count, three_count, four_count
+    return two_count, three_count
 
 
 for i in alphabet:
