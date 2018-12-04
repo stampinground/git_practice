@@ -265,7 +265,6 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 def volumechecker(letter):
     two_count = 0
     three_count = 0
-    four_count = 0
     for each_line in input_list:
         if each_line.count(letter) == 2:
             two_count += 1
